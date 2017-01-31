@@ -51,7 +51,7 @@ public class RepositoryGenerator implements Generator {
 
     public void createClasses(Element element) {
         environmentGenerator.createEnvironmentClass(element);
-        repoClass = TypeSpec.classBuilder("Repository").addModifiers(Modifier.PUBLIC, Modifier.FINAL);
+        repoClass = TypeSpec.classBuilder("Shelf").addModifiers(Modifier.PUBLIC, Modifier.FINAL);
     }
 
     @Override public void generate(JavaFile javaFile, Filer filer) {
