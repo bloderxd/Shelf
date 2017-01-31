@@ -16,7 +16,6 @@ public interface Test {
     void test();
 }
 ```
-<br/> 
 #### Fake
 ```java
 @Fake
@@ -28,7 +27,6 @@ public class TestFake implements Test {
     }
 }
 ```
-<br/>
 #### Prod
 ```java
 @Prod
