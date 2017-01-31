@@ -1,7 +1,7 @@
 package com.example;
 
-import com.example.repository.environment.EnvironmentGenerator;
-import com.example.repository.validator.LockerValidator;
+import com.example.environment.EnvironmentGenerator;
+import com.example.validator.LockerValidator;
 import com.google.auto.service.AutoService;
 
 import java.util.Collections;

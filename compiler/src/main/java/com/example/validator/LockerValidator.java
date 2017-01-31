@@ -1,7 +1,7 @@
 package com.example.validator;
 
-import com.example.repository.Fake;
-import com.example.repository.Prod;
+import com.example.Fake;
+import com.example.Prod;
 
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
