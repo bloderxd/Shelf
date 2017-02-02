@@ -4,7 +4,7 @@ Shelf is an easy way to implement repository pattern.
 ## But how?
 Add ```@Locker``` on your repositories and create a fixture and production implementations for them. 
 <br/> in fixture implementation add the annotation ```@Fake``` and in production implementation add the annotation 
-<br/> ```@Prod```. Be happy! :smile:
+<br/> ```@Prod```. Build the project and be happy! :smile:
 
 ## Example
 
@@ -49,4 +49,20 @@ Shelf.forTest().inProdEnvironment().test();
 ##### Fake call
 ```java
 Shelf.forTest().inFakeEnvironment().test();
+```
+## Import
+
+First, import apt classpath in your project gradle file
+```groovy
+classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' 
+```
+
+Then import shelf deppendencies in your app gradle file
+```groovy 
+apply plugin: 'com.neenbedankt.android-apt'
+
+dependencies {
+    compile 'com.bloder.shelf:core:1.0'
+    apt 'com.bloder.shelf:compiler:1.0'
+}
 ```
