@@ -23,6 +23,24 @@ repositories {
     jcenter()
 }
 
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "bloder"
+            name "Bloder"
+            email "aptgetinstalldanielleme@gmail.com"
+        }
+    }
+}
+
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -31,8 +49,18 @@ publishing {
             } else {
                 from components.java
             }
+            groupId "com.bloder.shelf"
+            artifactId "core"
+            version "1.0"
             artifact sourcesJar
             artifact javadocJar
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'An easy way to implement repository pattern')
+                root.appendNode('name', 'shelf')
+                root.appendNode('url', 'https://github.com/daniel-martins-ir/Shelf')
+                root.children().last() + pomConfig
+            }
         }
     }
 }
@@ -44,11 +72,12 @@ bintray {
     pkg {
         repo = 'maven'
         name = 'Shelf'
+        publish = true
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/daniel-martins-ir/Shelf.git'
         publicDownloadNumbers = true
         version {
-            name = '1.0'
+            name = "1.0"
             desc = 'An easy way to implement repository pattern'
             vcsTag = '1.0.0'
         }
