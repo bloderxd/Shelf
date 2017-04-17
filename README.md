@@ -43,12 +43,12 @@ You can call your repository with this:
 
 ##### Prod call
 ```java
-Shelf.forTest().inProdEnvironment().test();
+Shelf.forTest().withProd().test();
 ```
 
 ##### Fake call
 ```java
-Shelf.forTest().inFakeEnvironment().test();
+Shelf.forTest().withFake().test();
 ```
 ## Import
 
